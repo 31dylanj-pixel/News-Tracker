@@ -142,21 +142,29 @@ body.sunset .background {
         background 0.2s ease;
 }
 
-.icon-button {
-    width: 45px;
-    height: 45px;
+.icon-button svg {
+    width: 20px;
+    height: 20px;
 
-    border-radius: 50%;
+    display: block;
 
-    font-size: 19px;
+    fill: currentColor;
+
+    transition: transform 0.25s ease;
 }
 
-.icon-button:hover {
+.icon-button:hover svg {
     transform: rotate(20deg);
-    background: rgba(255, 255, 255, 0.2);
 }
 
+.brand-icon svg {
+    width: 21px;
+    height: 21px;
 
+    display: block;
+
+    color: white;
+}
 /* =========================================
    SEARCH
 ========================================= */
