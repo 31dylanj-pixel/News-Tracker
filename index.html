@@ -228,17 +228,51 @@
 
             <div class="setting-group">
 
+                <h3>AI Model</h3>
+            
+                <p class="setting-description">
+                    Choose which AI analyzes your tracked news.
+                </p>
+            
+                <button
+                    class="ai-option active"
+                    data-ai="openai"
+                >
+                    <div class="ai-option-info">
+                        <strong>OpenAI</strong>
+                        <small>OpenAI model</small>
+                    </div>
+            
+                    <span class="check">✓</span>
+                </button>
+            
+                <button
+                    class="ai-option"
+                    data-ai="deepseek"
+                >
+                    <div class="ai-option-info">
+                        <strong>DeepSeek</strong>
+                        <small>DeepSeek-V4.1-Flash</small>
+                    </div>
+            
+                    <span class="check">✓</span>
+                </button>
+            
+            </div>
+            
+            
+            <div class="setting-group">
+            
                 <h3>Data</h3>
-
+            
                 <button
                     class="danger-button"
                     id="clearDataButton"
                 >
                     Clear saved trackers
                 </button>
-
+            
             </div>
-
 
             <div class="settings-footer">
                 News Tracker v1.0
