@@ -125,7 +125,6 @@ body.sunset .background {
     color: white;
 }
 
-.icon-button,
 .close-button {
     border: none;
     cursor: pointer;
@@ -142,29 +141,55 @@ body.sunset .background {
         background 0.2s ease;
 }
 
-.icon-button svg {
-    width: 20px;
-    height: 20px;
+.icon-button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
 
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    fill: currentColor;
+    border: none;
+    outline: none;
+    border-radius: 50%;
 
-    transition: transform 0.25s ease;
-}
-
-.icon-button:hover svg {
-    transform: rotate(20deg);
-}
-
-.brand-icon svg {
-    width: 21px;
-    height: 21px;
-
-    display: block;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     color: white;
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
+.icon-button svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+}
+
+.icon-button:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.16);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 10px 28px rgba(0, 0, 0, 0.20);
+}
+
+.icon-button:active {
+    transform: scale(0.94);
+}
+
 /* =========================================
    SEARCH
 ========================================= */
