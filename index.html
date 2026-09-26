@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#001e78">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="News Tracker">
+
+    <title>News Tracker</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.svg">
+    <link rel="apple-touch-icon" href="icon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <div class="brand">
+                    <span class="brand-icon">N</span>
+                    <span>News Tracker</span>
+                </div>
+
+                <div class="date-time">
+                    <div id="currentDate">Loading date...</div>
+                    <div id="currentTime">00:00:00</div>
+                </div>
+            </div>
+
+            <button
+                class="icon-button"
+                id="settingsButton"
+                aria-label="Open settings"
+            >
+                ⚙
+            </button>
+
+        </header>
+
+
+        <!-- SEARCH -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="topicInput"
+                    placeholder="Add a topic to track..."
+                    autocomplete="off"
+                >
+
+                <button id="addTopicButton">
+                    Add
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRACKERS -->
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Your Trackers</h2>
+                    <p id="trackerCount">0 topics</p>
+                </div>
+
+                <button
+                    class="refresh-button"
+                    id="refreshButton"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+            <div id="trackerList" class="tracker-list"></div>
+
+        </section>
+
+
+        <!-- NEWS -->
+        <section class="section news-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Latest Updates</h2>
+                    <p id="selectedTopicLabel">Select a tracker</p>
+                </div>
+
+            </div>
+
+            <div id="newsList" class="news-list">
+
+                <div class="empty-state">
+                    <div class="empty-icon">📰</div>
+                    <h3>No tracker selected</h3>
+                    <p>
+                        Add a topic above and select it to view
+                        tracked information.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SETTINGS PANEL -->
+
+    <div class="overlay" id="settingsOverlay">
+
+        <aside class="settings-panel">
+
+            <div class="settings-header">
+
+                <div>
+                    <h2>Settings</h2>
+                    <p>Customize News Tracker</p>
+                </div>
+
+                <button
+                    class="close-button"
+                    id="closeSettings"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <h3>Appearance</h3>
+
+                <button
+                    class="theme-option active"
+                    data-theme="blue"
+                >
+                    <span class="theme-preview blue-preview"></span>
+
+                    <div>
+                        <strong>Deep Blue</strong>
+                        <small>Default theme</small>
+                    </div>
+
+                    <span class="check">✓</span>
+                </button>
+
+
+                <button
+                    class="theme-option"
+                    data-theme="sunset"
+                >
+                    <span class="theme-preview sunset-preview"></span>
+
+                    <div>
+                        <strong>Sunset</strong>
+                        <small>Warm gradient</small>
+                    </div>
+
+                    <span class="check">✓</span>
+                </button>
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <h3>Data</h3>
+
+                <button
+                    class="danger-button"
+                    id="clearDataButton"
+                >
+                    Clear saved trackers
+                </button>
+
+            </div>
+
+
+            <div class="settings-footer">
+                News Tracker v1.0
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
