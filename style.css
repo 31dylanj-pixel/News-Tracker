@@ -768,6 +768,116 @@ body.sunset .background {
     transform: translate(-50%, 0);
 }
 
+/* =========================================
+   AI MODEL OPTIONS
+========================================= */
+
+.setting-description {
+    margin: -4px 0 14px;
+    color: rgba(255, 255, 255, 0.62);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+.ai-option {
+    width: 100%;
+    min-height: 64px;
+    padding: 13px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.ai-option + .ai-option {
+    margin-top: 9px;
+}
+
+
+.ai-option:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+}
+
+
+.ai-option.active {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+
+.ai-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+.ai-option-info strong {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.ai-option-info small {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+.ai-option .check {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: transparent;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.ai-option.active .check {
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    transform: scale(1);
+}
 
 /* =========================================
    MOBILE / IPAD
