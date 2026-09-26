@@ -70,6 +70,9 @@ let selectedTopic =
 let currentTheme =
     localStorage.getItem("newsTrackerTheme") || "blue";
 
+let selectedAI =
+    localStorage.getItem("newsTrackerAI") || "openai";
+
 
 /* =========================================
    ELEMENTS
@@ -613,6 +616,57 @@ document
 
 applyTheme(currentTheme);
 
+/* =========================================
+   AI MODEL
+========================================= */
+
+function applyAI(ai) {
+
+    selectedAI = ai;
+
+    localStorage.setItem(
+        "newsTrackerAI",
+        ai
+    );
+
+    document
+        .querySelectorAll(".ai-option")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.ai === ai
+            );
+
+        });
+}
+
+
+document
+    .querySelectorAll(".ai-option")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                applyAI(
+                    button.dataset.ai
+                );
+
+                showToast(
+                    `${button.dataset.ai === "openai"
+                        ? "OpenAI"
+                        : "DeepSeek"} selected`
+                );
+
+            }
+        );
+
+    });
+
+
+applyAI(selectedAI);
 
 /* =========================================
    CLEAR DATA
